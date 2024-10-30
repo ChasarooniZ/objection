@@ -76,3 +76,5 @@ Does something, probably
 You can access the changelog [here](/CHANGELOG.md).
 ## Contributors
 You can see everyone else who contributed to the module [here](CONTRIBUTORS.md)
+## Sources
+- Objectionable! Letter Pack by ingthing (2016) - https://ingthing.dev/objectionable/
