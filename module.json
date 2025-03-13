@@ -1,7 +1,7 @@
 {
-  "id": "module",
-  "title": "New Module",
-  "description": "",
+  "id": "objection",
+  "title": "Objection!",
+  "description": "Adds a phoenix wright style objection image",
   "version": "#{VERSION}#",
   "library": "false",
   "manifestPlusVersion": "1.2.0",
