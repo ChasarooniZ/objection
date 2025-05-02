@@ -1,10 +1,9 @@
 {
   "id": "objection",
-  "title": "Objection!",
+  "title": "O is for Objection!",
   "description": "Adds a phoenix wright style objection image",
   "version": "#{VERSION}#",
   "library": "false",
-  "manifestPlusVersion": "1.2.0",
   "compatibility": {
     "minimum": 12,
     "verified": 12
@@ -17,7 +16,16 @@
     }
   ],
   "relationships": {
-    "systems": [],
+    "systems": [
+      {
+          "id": "sequencer",
+          "type": "module",
+          "manifest": "https://github.com/fantasycalendar/FoundryVTT-Sequencer/releases/latest/download/module.json",
+          "compatibility": {
+              "minimum": "3.4.9",
+              "verified": "3.4.9"
+          }
+      }],
     "requires": []
   },
   "esmodules": [
