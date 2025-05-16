@@ -1,3 +1,12 @@
+## 0.2.0 - Go Flipper! Go Flipper! Go Flipper!
+
+- `New`
+  - Added new keybind option `Shift + O` to play the objection animation flipped
+  - Added new setting to have Hostile tokens play flipped by default
+- `Fixed`
+  - Fixed getting dynamic art if it is enabled
+  - API passed in properties not working
+
 ## 0.1.0
 
 - Initial Release

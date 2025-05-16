@@ -1,22 +1,30 @@
 import { MODULE_ID } from "./const.js";
 import { objection } from "./objection.js";
 
+export function setupAPI() {
+  game.objection = {
+    api: {
+      objection: objection,
+    },
+  };
+}
+
 export function getSetting(setting) {
   return game.settings.get(MODULE_ID, setting);
 }
 
 export function getCharacterArt() {
   let tokDoc = canvas.tokens.controlled?.[0]?.document;
-  let art = tokDoc?.ring?.subject?.texture
-    ? tokDoc?.ring.art || tokDoc?.texture?.src
+  let art = tokDoc?.ring?.enabled
+    ? tokDoc?.ring?.subject?.texture || tokDoc?.texture?.src
     : tokDoc?.texture?.src;
 
   if (art) return art;
 
   //Get Character if none
   tokDoc = game.user?.character?.prototypeToken;
-  art = tokDoc?.ring?.subject?.texture
-    ? tokDoc?.ring.art || tokDoc?.texture?.src
+  art = tokDoc?.ring?.subject?.enabled
+    ? tokDoc?.ring?.subject?.texture || tokDoc?.texture?.src
     : tokDoc?.texture?.src;
   if (art) return art;
 
@@ -31,10 +39,14 @@ export function getScale() {
   return 1;
 }
 
-export function setupAPI() {
-  game.objection = {
-    api: {
-      objection: objection,
-    },
-  };
+export function getFlip() {
+  if (getSetting("flip-hostile")) {
+    const tok =
+      canvas.tokens.controlled?.[0]?.document ??
+      game.user?.character?.prototypeToken;
+    if (tok) {
+      return tok.disposition === CONST.TOKEN_DISPOSITIONS.HOSTILE;
+    }
+  }
+  return false;
 }

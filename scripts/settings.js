@@ -56,6 +56,16 @@ export function registerSettings() {
     default: `modules/objection/assets/chibi_ace-attorney.webp`,
     type: String,
   });
+
+  game.settings.register(MODULE_ID, `flip-hostile`, {
+    name: game.i18n.localize(`${MODULE_ID}.module-settings.flip-hostile.name`),
+    hint: game.i18n.localize(`${MODULE_ID}.module-settings.flip-hostile.hint`),
+    scope: `world`,
+    config: true,
+    default: false,
+    type: Boolean,
+  });
+
 }
 
 export function registerKeybindings() {
@@ -67,12 +77,16 @@ export function registerKeybindings() {
         key: "KeyO",
       },
     ],
-    onDown: () => {
-      game.objection.api.objection();
+    onDown: (context) => {
+      if (context.isShift) {
+        game.objection.api.objection({flipped: true});
+      } else {
+        game.objection.api.objection();
+      }
     },
     onUp: () => {},
     restricted: false, // Restrict this Keybinding to gamemaster only?
-    //reservedModifiers: ["Alt"],  // On ALT, the notification is permanent instead of temporary
+    reservedModifiers: ["Shift"], // On ALT, the notification is permanent instead of temporary
     precedence: CONST.KEYBINDING_PRECEDENCE.NORMAL,
   });
 }

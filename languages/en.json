@@ -19,12 +19,16 @@
           "name": "Bench Duration",
           "hint": "How long to show the bench image after the Objection! word"
         }
+      },
+      "flip-hostile": {
+        "name": "Flip Hostile Objection",
+        "hint": "Cause hostile objections to play on the opposite side by default"
       }
     },
     "controls": {
       "objection": {
         "name": "Objection!",
-        "hint": "Keybind to run default Objection! Macro"
+        "hint": "Keybind to run default Objection! Macro (hold Shift to play on the opposite side)"
       }
     }
   }

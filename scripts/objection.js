@@ -1,15 +1,13 @@
 import { IMAGES, MODULE_ID, MS_TO_S } from "./const.js";
-import { getCharacterArt, getOffset, getScale, getSetting } from "./helpers.js";
+import {
+  getCharacterArt,
+  getFlip,
+  getOffset,
+  getScale,
+  getSetting,
+} from "./helpers.js";
 
-export function objection(
-  cfg = {
-    benchDuration: getSetting("duration.bench"),
-    wordDuration: getSetting("duration.word"),
-    characterArt: getCharacterArt(),
-    sfx: getSetting("sfx"),
-    volume: getSetting("volume"),
-  }
-) {
+export function objection(cfg) {
   const art = {
     char: getSetting("default-art"),
     objection: IMAGES.TEXT.OBJECTION,
@@ -17,12 +15,18 @@ export function objection(
   };
 
   const config = {
-    offset: getOffset(),
-    scale: getScale(),
+    benchDuration: cfg?.benchDuration ?? getSetting("duration.bench"),
+    wordDuration: cfg?.wordDuration ?? getSetting("duration.word"),
+    characterArt: cfg?.characterArt ?? getCharacterArt(),
+    sfx: cfg?.sfx ?? getSetting("sfx"),
+    volume: cfg?.volume ?? getSetting("volume"),
+    offset: cfg?.offset ?? getOffset(),
+    scale: cfg?.scale ?? getScale(),
+    flipped: !!cfg?.flipped != getFlip(),
   };
 
-  const duration = cfg.benchDuration * MS_TO_S;
-  const objection = cfg.wordDuration * MS_TO_S;
+  const duration = config.benchDuration * MS_TO_S;
+  const objection = config.wordDuration * MS_TO_S;
 
   const loops = {
     objection: { values: [0, 3, 0], duration: 50, ease: "easeOutQuint" },
@@ -34,10 +38,10 @@ export function objection(
     .file(art.objection)
     .fadeIn(objection / 2, { ease: "easeOutQuint" })
     //.fadeOut(500, {ease: "easeOutQuint"})
-    .spriteAnchor({ x: 0, y: 1 })
+    .spriteAnchor({ x: config.flipped ? 1 : 0, y: 1 })
     .screenSpace()
     .screenSpaceAboveUI()
-    .screenSpaceAnchor({ x: 0, y: 1 })
+    .screenSpaceAnchor({ x: config.flipped ? 1 : 0, y: 1 })
     .screenSpaceScale({ fitY: true, ratioX: true })
     .loopProperty("sprite", "position.x", loops.objection)
     .loopProperty("sprite", "position.y", loops.objection)
@@ -48,23 +52,30 @@ export function objection(
     //bench
     .effect()
     .file(art.bench)
-    .spriteAnchor({ x: 0, y: 1 })
+    .spriteAnchor({ x: config.flipped ? 1 : 0, y: 1 })
     .screenSpace()
     .screenSpaceAboveUI()
-    .screenSpaceAnchor({ x: 0, y: 1 })
+    .screenSpaceAnchor({ x: config.flipped ? 1 : 0, y: 1 })
     .screenSpaceScale({ fitY: true, ratioX: true })
     .scale(1 / 10)
+    .mirrorX(config.flipped)
     .duration(duration + objection)
     //.delay(objection - 100)
     .zIndex(3)
 
     // Token
     .effect()
-    .file(cfg.characterArt ?? art.char)
-    .spriteAnchor({ x: 0 + config.offset.x, y: 0.8 + config.offset.y })
+    .file(config.characterArt ?? art.char)
+    .spriteAnchor({
+      x:
+        (config.flipped ? 1 : 0) +
+        (config.flipped ? -config.offset.x : config.offset.x),
+      y: 0.8 + config.offset.y,
+    })
+    .mirrorX(config.flipped)
     .screenSpace()
     .screenSpaceAboveUI()
-    .screenSpaceAnchor({ x: 0, y: 1 })
+    .screenSpaceAnchor({ x: config.flipped ? 1 : 0, y: 1 })
     .screenSpaceScale({ fitY: true, ratioX: true })
     .scale(config.scale / 2)
     .duration(duration + objection)
@@ -73,8 +84,8 @@ export function objection(
 
     //SFX
     .sound()
-    .file(cfg.sfx)
-    .volume(cfg.volume)
+    .file(config.sfx)
+    .volume(config.volume)
 
     .play({ preload: true });
 }
