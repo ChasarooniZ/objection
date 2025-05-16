@@ -1,3 +1,31 @@
 {
-    "MODULE.hello": "hello"
+  "I18N.LANGUAGE": "English",
+  "objection": {
+    "module-settings": {
+      "sfx": {
+        "name": "Sound Effect",
+        "hint": "SFX to play when the animation is played"
+      },
+      "volume": {
+        "name": "Volume",
+        "hint": "Volume level to play sfx at (0 - 1)"
+      },
+      "duration": {
+        "word": {
+          "name": "Duration of Objection! word",
+          "hint": "Duration to play the Objection portion of the animation"
+        },
+        "bench": {
+          "name": "Bench Duration",
+          "hint": "How long to show the bench image after the Objection! word"
+        }
+      }
+    },
+    "controls": {
+      "objection": {
+        "name": "Objection!",
+        "hint": "Keybind to run default Objection! Macro"
+      }
+    }
+  }
 }
