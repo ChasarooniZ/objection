@@ -31,6 +31,20 @@ export function getCharacterArt() {
   return game.user.avatar;
 }
 
+export function getCharacterFlip() {
+  let tokDoc = canvas.tokens.controlled?.[0]?.document;
+  if (!tokDoc) {
+    tokDoc = game.user?.character?.prototypeToken;
+  }
+  if (game.modules.has("about-face")) {
+    const global_dir = game.settings.get("about-face", "facing-direction");
+    const flag = tokDoc?.flags["about-face"]?.facingDirection;
+    return flag === "global" ? global_dir === "left" : flag === "left";
+  } else {
+    return tokDoc?.texture?.scaleX < 0;
+  }
+}
+
 export function getOffset() {
   return { x: 0 / 100, y: 0 / 100 };
 }

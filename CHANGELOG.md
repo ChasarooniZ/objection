@@ -1,3 +1,8 @@
+## 0.3.0 - More Flipping
+- `New`
+  - Added support for `About Face` facing direction
+  - If about face isn't enabled instead will base on the `Mirror Horizontally` token flag
+
 ## 0.2.0 - Go Flipper! Go Flipper! Go Flipper!
 
 - `New`

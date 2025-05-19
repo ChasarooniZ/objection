@@ -1,6 +1,7 @@
 import { IMAGES, MODULE_ID, MS_TO_S } from "./const.js";
 import {
   getCharacterArt,
+  getCharacterFlip,
   getFlip,
   getOffset,
   getScale,
@@ -18,6 +19,7 @@ export function objection(cfg) {
     benchDuration: cfg?.benchDuration ?? getSetting("duration.bench"),
     wordDuration: cfg?.wordDuration ?? getSetting("duration.word"),
     characterArt: cfg?.characterArt ?? getCharacterArt(),
+    flipArt: cfg?.flipArt ?? getCharacterFlip(),
     sfx: cfg?.sfx ?? getSetting("sfx"),
     volume: cfg?.volume ?? getSetting("volume"),
     offset: cfg?.offset ?? getOffset(),
@@ -72,7 +74,7 @@ export function objection(cfg) {
         (config.flipped ? -config.offset.x : config.offset.x),
       y: 0.8 + config.offset.y,
     })
-    .mirrorX(config.flipped)
+    .mirrorX(config.flipped !== config?.flipArt)
     .screenSpace()
     .screenSpaceAboveUI()
     .screenSpaceAnchor({ x: config.flipped ? 1 : 0, y: 1 })
