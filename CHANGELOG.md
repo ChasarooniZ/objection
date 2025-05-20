@@ -1,3 +1,6 @@
+## 0.3.1 - More Flipping
+- Fix download for new update
+
 ## 0.3.0 - More Flipping
 - `New`
   - Added support for `About Face` facing direction
