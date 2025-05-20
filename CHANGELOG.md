@@ -1,7 +1,13 @@
-## 0.3.1 - More Flipping
+## 0.3.2 - More Fixes
+
+- Fix Manifest again ;-;
+
+## 0.3.1 - More Fixes
+
 - Fix download for new update
 
 ## 0.3.0 - More Flipping
+
 - `New`
   - Added support for `About Face` facing direction
   - If about face isn't enabled instead will base on the `Mirror Horizontally` token flag
