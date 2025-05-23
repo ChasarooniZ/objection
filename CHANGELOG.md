@@ -1,3 +1,8 @@
+## 0.3.3 - Missing Face
+
+- `Fixed`
+  - Fixed module breaking error when you have `About Face` installed but not active
+
 ## 0.3.2 - More Fixes
 
 - Fix Manifest again ;-;

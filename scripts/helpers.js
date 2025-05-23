@@ -36,7 +36,7 @@ export function getCharacterFlip() {
   if (!tokDoc) {
     tokDoc = game.user?.character?.prototypeToken;
   }
-  if (game.modules.has("about-face")) {
+  if (game.modules?.get("about-face")?.enabled) {
     const global_dir = game.settings.get("about-face", "facing-direction");
     const flag = tokDoc?.flags["about-face"]?.facingDirection;
     return flag === "global" ? global_dir === "left" : flag === "left";
