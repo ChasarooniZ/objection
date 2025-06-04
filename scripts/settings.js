@@ -65,7 +65,6 @@ export function registerSettings() {
     default: false,
     type: Boolean,
   });
-
 }
 
 export function registerKeybindings() {
@@ -79,9 +78,85 @@ export function registerKeybindings() {
     ],
     onDown: (context) => {
       if (context.isShift) {
-        game.objection.api.objection({flipped: true});
+        game.objection.api.objection({ type: "objection", flipped: true });
       } else {
-        game.objection.api.objection();
+        game.objection.api.objection({ type: "objection" });
+      }
+    },
+    onUp: () => {},
+    restricted: false, // Restrict this Keybinding to gamemaster only?
+    reservedModifiers: ["Shift"], // On ALT, the notification is permanent instead of temporary
+    precedence: CONST.KEYBINDING_PRECEDENCE.NORMAL,
+  });
+
+  game.keybindings.register(MODULE_ID, "gotcha", {
+    name: game.i18n.localize(`${MODULE_ID}.controls.gotcha.name`),
+    hint: game.i18n.localize(`${MODULE_ID}.controls.gotcha.hint`),
+    editable: [
+      {
+        key: "KeyG",
+      },
+    ],
+    onDown: (context) => {
+      if (context.isShift) {
+        game.objection.api.objection({ type: "gotcha", flipped: true });
+      } else {
+        game.objection.api.objection({ type: "gotcha" });
+      }
+    },
+    onUp: () => {},
+    restricted: false, // Restrict this Keybinding to gamemaster only?
+    reservedModifiers: ["Shift"], // On ALT, the notification is permanent instead of temporary
+    precedence: CONST.KEYBINDING_PRECEDENCE.NORMAL,
+  });
+
+  game.keybindings.register(MODULE_ID, "hold-it", {
+    name: game.i18n.localize(`${MODULE_ID}.controls.hold-it.name`),
+    hint: game.i18n.localize(`${MODULE_ID}.controls.hold-it.hint`),
+    editable: [
+      {
+        key: "KeyH",
+      },
+    ],
+    onDown: (context) => {
+      if (context.isShift) {
+        game.objection.api.objection({ type: "hold_it", flipped: true });
+      } else {
+        game.objection.api.objection({ type: "hold_it" });
+      }
+    },
+    onUp: () => {},
+    restricted: false, // Restrict this Keybinding to gamemaster only?
+    reservedModifiers: ["Shift"], // On ALT, the notification is permanent instead of temporary
+    precedence: CONST.KEYBINDING_PRECEDENCE.NORMAL,
+  });
+
+  game.keybindings.register(MODULE_ID, "eureka", {
+    name: game.i18n.localize(`${MODULE_ID}.controls.eureka.name`),
+    hint: game.i18n.localize(`${MODULE_ID}.controls.eureka.hint`),
+    editable: [],
+    onDown: (context) => {
+      if (context.isShift) {
+        game.objection.api.objection({ type: "eureka", flipped: true });
+      } else {
+        game.objection.api.objection({ type: "eureka" });
+      }
+    },
+    onUp: () => {},
+    restricted: false, // Restrict this Keybinding to gamemaster only?
+    reservedModifiers: ["Shift"], // On ALT, the notification is permanent instead of temporary
+    precedence: CONST.KEYBINDING_PRECEDENCE.NORMAL,
+  });
+
+  game.keybindings.register(MODULE_ID, "take-that", {
+    name: game.i18n.localize(`${MODULE_ID}.controls.take-that.name`),
+    hint: game.i18n.localize(`${MODULE_ID}.controls.take-that.hint`),
+    editable: [],
+    onDown: (context) => {
+      if (context.isShift) {
+        game.objection.api.objection({ type: "take_that", flipped: true });
+      } else {
+        game.objection.api.objection({ type: "take_that" });
       }
     },
     onUp: () => {},

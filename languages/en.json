@@ -29,6 +29,22 @@
       "objection": {
         "name": "Objection!",
         "hint": "Keybind to run default Objection! Macro (hold Shift to play on the opposite side)"
+      },
+      "eureka": {
+        "name": "Eureka!",
+        "hint": "Keybind to run Eureka! animation (hold Shift to play on the opposite side)"
+      },
+      "gotcha": {
+        "name": "Gotcha!",
+        "hint": "Keybind to run Gotcha! animation (hold Shift to play on the opposite side)"
+      },
+      "hold-it": {
+        "name": "Hold It!",
+        "hint": "Keybind to run Hold It! animation (hold Shift to play on the opposite side)"
+      },
+      "take-that": {
+        "name": "Take That!",
+        "hint": "Keybind to run Take That! animation (hold Shift to play on the opposite side)"
       }
     }
   }

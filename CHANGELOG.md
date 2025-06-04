@@ -1,3 +1,11 @@
+## 1.1.0 - Hold It
+
+- `New`
+  - Added `Eureka`, `Gotcha`, `Hold it`, and `Take that` animations (some are mapped others aren't mapped ot hotkeys)
+- `Updated`
+  - Updated compatibility to FVTT `v13`
+  - Fixed Lawyer bench not showing
+
 ## 0.3.3 - Missing Face
 
 - `Fixed`

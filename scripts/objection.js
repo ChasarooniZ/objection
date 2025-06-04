@@ -9,12 +9,6 @@ import {
 } from "./helpers.js";
 
 export function objection(cfg) {
-  const art = {
-    char: getSetting("default-art"),
-    objection: IMAGES.TEXT.OBJECTION,
-    bench: IMAGES.BENCH,
-  };
-
   const config = {
     benchDuration: cfg?.benchDuration ?? getSetting("duration.bench"),
     wordDuration: cfg?.wordDuration ?? getSetting("duration.word"),
@@ -25,6 +19,13 @@ export function objection(cfg) {
     offset: cfg?.offset ?? getOffset(),
     scale: cfg?.scale ?? getScale(),
     flipped: !!cfg?.flipped != getFlip(),
+    type: cfg?.type ?? "objection",
+  };
+
+  const art = {
+    char: getSetting("default-art"),
+    objection: IMAGES.TEXT?.[config.type],
+    bench: IMAGES.BENCH,
   };
 
   const duration = config.benchDuration * MS_TO_S;
