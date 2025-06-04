@@ -36,7 +36,7 @@ You can see everyone else who contributed to the module [here](CONTRIBUTORS.md)
 
 ## Sources
 
-- Objectionable! Letter Pack by ingthing (2016) - https://ingthing.dev/objectionabl4e/
+- Objectionable! Letter Pack by ingthing (2016) - https://ingthing.dev/objectionable/
 - Chibi Phoenix Wright
   - [Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License](https://www.deviantart.com/zerochan923600/art/Chibi-OBJECTION-2-427935027)
 - Orchestra Hit
