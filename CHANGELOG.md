@@ -1,3 +1,8 @@
+## 1.1.1 - The Bench
+
+- `Updated`
+  - Made the bench a bit bigger
+
 ## 1.1.0 - Hold It
 
 - `New`

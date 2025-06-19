@@ -60,7 +60,7 @@ export function objection(cfg) {
     .screenSpaceAboveUI()
     .screenSpaceAnchor({ x: config.flipped ? 1 : 0, y: 1 })
     .screenSpaceScale({ fitY: true, ratioX: true })
-    .scale(1 / 10)
+    .scale(1 / 3)
     .mirrorX(config.flipped)
     .duration(duration + objection)
     //.delay(objection - 100)
