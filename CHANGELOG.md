@@ -1,3 +1,8 @@
+## 1.1.2 - Fixed versions
+
+- `Updated`
+  - Fixed issue with the listed versions to support v13
+
 ## 1.1.1 - The Bench
 
 - `Updated`
