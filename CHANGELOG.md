@@ -1,3 +1,8 @@
+## 1.2.0 - Reactive Objection
+
+- `Added`
+  - `Reaction Objection` - Adds a global setting to play `Objection` for when a chat message with a reaction is sent to chat (for the pf2e system) (🧠 @Nuku)
+
 ## 1.1.2 - Fixed versions
 
 - `Updated`

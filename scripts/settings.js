@@ -1,4 +1,5 @@
 import { MODULE_ID } from "./const.js";
+import { isPF2e } from "./helpers.js";
 
 export function registerSettings() {
   // Register setting for enabling/disabling NPC activations
@@ -63,6 +64,15 @@ export function registerSettings() {
     scope: `world`,
     config: true,
     default: false,
+    type: Boolean,
+  });
+
+  game.settings.register(MODULE_ID, `reaction.enabled`, {
+    name: game.i18n.localize(`${MODULE_ID}.module-settings.reaction.enabled.name`),
+    hint: game.i18n.localize(`${MODULE_ID}.module-settings.reaction.enabled.hint`),
+    scope: `world`,
+    config: isPF2e(),
+    default: isPF2e(),
     type: Boolean,
   });
 }

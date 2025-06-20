@@ -64,3 +64,7 @@ export function getFlip() {
   }
   return false;
 }
+
+export function isPF2e() {
+  return game?.system?.id === "pf2e";
+}

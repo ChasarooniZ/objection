@@ -23,6 +23,12 @@
       "flip-hostile": {
         "name": "Flip Hostile Objection",
         "hint": "Cause hostile objections to play on the opposite side by default"
+      },
+      "reaction": {
+        "enabled": {
+          "name": "Reactions cause an Objection!",
+          "hint": "When a reaction is sent to chat (for the pf2e system) it causes an objection"
+        }
       }
     },
     "controls": {
