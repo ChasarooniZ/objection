@@ -11,7 +11,10 @@ Hooks.once("ready", async function () {
   Hooks.on("createChatMessage", async function (msg, _status, userid) {
     if (game.user.id !== userid) return;
     if (
-      msg?.item?.system?.actionType?.value === "reaction" &&
+      (
+        message?.item?.system?.actionType?.value === "reaction"
+        || message?.item?.system?.time?.value === "reaction"
+      ) &&
       !msg?.flags?.pf2e?.context?.type &&
       getSetting("reaction.enabled")
     ) {

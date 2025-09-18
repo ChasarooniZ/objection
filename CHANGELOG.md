@@ -1,3 +1,8 @@
+## 1.2.1 - Spells
+
+- `Updated`
+  - `Reaction Objection` - Catches reaction spells now too (🐛 @boothy13)
+
 ## 1.2.0 - Reactive Objection
 
 - `Added`
