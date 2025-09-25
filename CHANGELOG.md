@@ -1,3 +1,8 @@
+## 1.2.2 - Bug Fixes
+
+- `Updated`
+  - `Reaction Objection` - Fixed improperly named variable causing this to fail (🐛 @khall)
+
 ## 1.2.1 - Spells
 
 - `Updated`

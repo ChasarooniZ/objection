@@ -12,8 +12,8 @@ Hooks.once("ready", async function () {
     if (game.user.id !== userid) return;
     if (
       (
-        message?.item?.system?.actionType?.value === "reaction"
-        || message?.item?.system?.time?.value === "reaction"
+        msg?.item?.system?.actionType?.value === "reaction"
+        || msg?.item?.system?.time?.value === "reaction"
       ) &&
       !msg?.flags?.pf2e?.context?.type &&
       getSetting("reaction.enabled")
