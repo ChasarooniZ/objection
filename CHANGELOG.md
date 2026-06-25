@@ -1,3 +1,8 @@
+## 1.2.4
+
+- Updated to support `v14`
+- Deprecated support for `v12`
+
 ## 1.2.3 - Removed Defaults
 
 - Removed all default keys but Objection
