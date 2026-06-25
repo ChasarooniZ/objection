@@ -1,3 +1,7 @@
+## 1.2.3 - Removed Defaults
+
+- Removed all default keys but Objection
+
 ## 1.2.2 - Bug Fixes
 
 - `Updated`
