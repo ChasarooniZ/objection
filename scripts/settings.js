@@ -103,9 +103,9 @@ export function registerKeybindings() {
     name: game.i18n.localize(`${MODULE_ID}.controls.gotcha.name`),
     hint: game.i18n.localize(`${MODULE_ID}.controls.gotcha.hint`),
     editable: [
-      {
-        key: "KeyG",
-      },
+      // {
+      //   key: "KeyG",
+      // },
     ],
     onDown: (context) => {
       if (context.isShift) {
@@ -124,9 +124,9 @@ export function registerKeybindings() {
     name: game.i18n.localize(`${MODULE_ID}.controls.hold-it.name`),
     hint: game.i18n.localize(`${MODULE_ID}.controls.hold-it.hint`),
     editable: [
-      {
-        key: "KeyH",
-      },
+      // {
+      //   key: "KeyH",
+      // },
     ],
     onDown: (context) => {
       if (context.isShift) {
